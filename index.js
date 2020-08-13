@@ -6,7 +6,7 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
+function createMenuItem(name, price, category){
     return {name, price, category};
 }
 
@@ -26,8 +26,14 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
-
-
+burger.discount = function(person){
+if (person === "teacher" || person === "student"){
+  return this.price*.75;
+} 
+else {}
+return this.price*.90;
+}
+console.log(burger.discount('teacher'));
 ///////////////Reviews (MVP)///////////////////
 
 const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
