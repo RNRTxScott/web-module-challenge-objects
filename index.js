@@ -127,10 +127,22 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
+  function getLongReviews(array) {
+    for (i = 0; i < array.length; i++){
+      let = spaceCount = 0;
+      for (pos = 0; pos < array[i].feedback.length; pos++){
+        if (array[i].feedback.charAt(pos) === " "){
+          spaceCount = spaceCount + 1;
+        }
+      }
+      if ((spaceCount + 1) >= 15){
+        return (array[i]);
+      }
+      array.repeat(4);
+    }
   }
-  
+
+  console.log(getLongReviews(reviews))
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
