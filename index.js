@@ -129,20 +129,14 @@ and should return an array of objects.
 */
   function getLongReviews(array) {
     for (i = 0; i < array.length; i++){
-      let = spaceCount = 0;
-      for (pos = 0; pos < array[i].feedback.length; pos++){
-        if (array[i].feedback.charAt(pos) === " "){
-          spaceCount = spaceCount + 1;
-        }
+      let spaceCount = array[i].feedback.split(' ').length;
+      if (spaceCount > 15){
+        console.log(`${array[i].name}, ${array[i].rating}, ${array[i].feedback}`);
       }
-      if ((spaceCount + 1) >= 15){
-        return (array[i]);
-      }
-      array.repeat(4);
     }
   }
 
-  console.log(getLongReviews(reviews))
+  console.log(getLongReviews(reviews));
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
